@@ -11,7 +11,7 @@ fn greet(name: &str) -> String {
 #[tauri::command]
 fn play() {
     AUDIO_SERVICE_INSTANCE.play(String::from(
-        "/run/media/yuriib/Skebob/Music/02 - Satan Hussein.flac",
+        "/home/sashas/Downloads/14 Apple Pie.flac",
     ));
     println!("play")
 }
