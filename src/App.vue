@@ -2,6 +2,7 @@
 import { invoke } from "@tauri-apps/api/core";
 import { ref, watch } from "vue";
 import ControllBar from "./components/ControllBar.vue";
+import Backdrop from "./components/ui/Backdrop.vue";
 
 const volumePercentage = ref(100);
 
@@ -25,7 +26,7 @@ watch(volumePercentage, async (newValue) => {
 
 <template>
     <main class="application">
-        <section class="bob"></section>
+        <Backdrop variant="dark" :roundness="22"></Backdrop>
         <ControllBar></ControllBar>
     </main>
 </template>

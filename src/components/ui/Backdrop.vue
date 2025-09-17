@@ -26,12 +26,15 @@ const computedStyles = computed(() => ({
       `control-bar--${props.variant}`
     ]"
       :style="computedStyles"
-  />
+  >
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped>
 .control-bar {
   width: 100%;
+  height: 100%;
   border-radius: 22px;
 }
 
