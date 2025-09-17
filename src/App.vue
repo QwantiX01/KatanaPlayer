@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { invoke } from "@tauri-apps/api/core";
 import { ref, watch } from "vue";
+import ControllBar from "./components/ControllBar.vue";
 
 const volumePercentage = ref(100);
 
@@ -23,9 +24,26 @@ watch(volumePercentage, async (newValue) => {
 </script>
 
 <template>
-    <main class="">
-        <button @click="play">PLay</button>
-        <button @click="pause">Pause</button>
-        <input type="range" min="0" max="100" v-model="volumePercentage" />
+    <main class="application">
+        <section class="bob"></section>
+        <ControllBar></ControllBar>
     </main>
 </template>
+
+<style>
+.application {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+    gap: 1.5rem;
+    background-color: var(--background-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.bob {
+    background-color: var(--background-primary);
+    flex: 1;
+}
+</style>
